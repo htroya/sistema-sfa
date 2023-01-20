@@ -1,0 +1,253 @@
+/*:root {--alto_pantalla_3ro: 300px;
+       --alto_pantalla_4to: 300px;
+       --alto_pantalla_rmu: 300px;}*/
+
+:root {
+  --alto_pantalla_3ro: 300px;
+  --alto_pantalla_4to: 300px;
+}
+
+
+/* Scroll Results Only in Side Column */
+.t-Body-side {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 225px;
+}
+
+.a-GV-table .a-GV-row:nth-child(odd) .a-GV-cell  {
+   background-color: #baf9f952;  
+}
+
+.search-results {
+    flex: 1;
+    overflow: auto;
+}
+/* Format Search Region */
+.search-region {
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    flex-shrink: 0;
+}
+
+/* oculta el menu sumarizado del IG */
+/*.a-IG-button.a-IG-button--controls {    
+    display: none;
+}
+
+.a-IG-reportSummary {   
+    display: none;
+}
+
+.a-IG-controls-item:last-child {  
+    display: none;
+}*/
+/* fin de oculta el menu sumarizado del IG */
+
+/* se disminuye el hight de la barra de titulo secundario */
+.t-Region-headerItems--title {   
+    height: 30px;
+}
+
+
+/* se posiciona la region central y derecha */
+.t-Body-mainContent {
+    flex-grow: 1;
+    margin-left: -16px;
+    margin-top: -16px;
+    margin-right: -4px;
+}
+
+/*.col-9 {
+    width: 70%;
+}*/
+
+.t-Body-contentInner {
+    margin: 5px;
+    max-width: 105%;
+    padding: 11px;
+    flex-grow: 1;
+    width: 100%;
+}
+/* fin se posiciona la region central y derecha */
+
+
+/* se pone color al titulo de los grupos ingresos gastos provisiones */
+.a-IG-header, .a-IGDialog-footer, .a-IGDialog-header, .a-IGDialog-side {
+    border-color: #e0e0e0;
+    background-color: #9e9e9e3b;   
+}
+
+/* cambia de color al pasar sobre el item del media list */
+
+.t-MediaList-item:hover{ 
+    background-color: #2196f314;   
+}
+
+/*cambia el estilo de letra del titulo de la cabecera breadcum bar */
+
+.t-Body-title .t-HeroRegion-col--content, .t-Body-title .t-HeroRegion-title {  
+   font-size: 20px;
+    line-height: 100%;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* espacio entre el titulo y el text-item de buqyeda de empleados*/
+.t-Form-labelContainer--hiddenLabel {
+     min-height: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.t-Form--labelsAbove .t-Form-fieldContainer .t-Form-labelContainer--hiddenLabel, .t-Form-fieldContainer--stacked .t-Form-labelContainer--hiddenLabel {
+    height: 0.5rem;
+}
+
+/* auemnta el texto del media list */
+.t-MediaList-desc, .t-MediaList-title {
+    margin: 0;   
+    margin-right: 0px;
+    width: 125%;
+}
+
+/* clase para cambiar de color las casillas impares*/
+.filas_alternadas_IG:nth-child(odd){
+   background-color: #e3f9f9;         
+}
+/*.filas_alternadas_IG:hover{
+   background-color: rgba(204,204,80,.55);         
+}*/
+
+
+/*es el color cuando se selecciona una fila se le da click*/
+/*.a-GV-table tr.is-selected .a-GV-cell {
+    background-color: rgba(204,204,80,.55);
+}*/
+
+/* aqui se pone el color del titulo del dialogo*/
+.t-Dialog--wizard.ui-dialog .ui-dialog-title, body .ui-dialog .ui-dialog-title {
+     color: #142379;
+    font-size: 16px;
+    font-weight: bold;    
+}
+
+.alinea_derecha{
+        text-align: right!important;
+}
+
+.reduce_letra{
+     font-size: 10px;
+}
+
+#r_dialog_ig_detalle_nomina_ig_report_settings{
+    display: none;
+}
+
+#r_dialog_ig_detalle_nomina_ig_grid_vc_status{
+    display: none;
+}
+
+#r_dialog_ig_detalle_nomina_ig_grid_vc_pageRange{
+    position: relative;
+    top: -7px;
+}
+
+#ig_nomina_format_ig_report_settings{
+   display: none; 
+}
+
+#r_search .t-Region-title{
+   color: #04a6ab;
+    font-weight: 700;
+    font-size: 17px;
+    position: relative;
+    left: 1px;
+    top: -14px;
+}
+
+.color_back {
+    background-color: #04a6ab!important;
+}
+
+
+@supports (-moz-appearance:none) {
+  select
+  {
+  -moz-appearance:none !important;
+  background: transparent url('data:image/gif;base64,R0lGODlhBgAGAKEDAFVVVX9/f9TU1CgmNyH5BAEKAAMALAAAAAAGAAYAAAIODA4hCDKWxlhNvmCnGwUAOw==') right center no-repeat !important;
+  background-position: calc(100% - 5px) center !important;
+  scrollbar-color: silver #f1f1f1;
+  }
+    
+  div{  
+  scrollbar-color: silver #f1f1f1;
+  }    
+    
+  .t-Region-title{
+    font-weight: 600;
+    font-size: 1.6rem;
+  }        
+}
+
+#r_numeros_certificacion_nomina_ig_report_settings{
+   display: none;
+}
+
+
+#r_numeros_certificacion_nomina_ig_row_actions_menu_0{
+   display: none;  
+}
+
+#r_numeros_certificacion_nomina_ig_row_actions_menu_4{
+   display: none;  
+}
+
+#r_numeros_certificacion_nomina_ig_selection_actions_menu_7{
+   display: none; 
+}
+
+#r_numeros_certificacion_nomina_ig_selection_actions_menu_8{
+   display: none; 
+}
+
+#r_numeros_certificacion_nomina_ig_selection_actions_menu_9{
+   display: none;  
+}
+
+#r_ig_componentes_3ro_control_panel{
+     display: none;  
+}
+
+#r_ig_componentes_4to_control_panel{
+     display: none;  
+}
+
+#r_ig_componentes_rmu_control_panel{
+     display: none;  
+}
+
+#INGRESOS_GRID_ig_grid_vc_status{
+    display: none;  
+}
+
+#GASTOS_GRID_ig_grid_vc_status{
+    display: none;  
+}
+
+#PROVISIONES_GRID_ig_grid_vc_status{
+    display: none;  
+}
+
+#r_ig_componentes_3ro_pivot{
+   height: var(--alto_pantalla_3ro); 
+}    
+
+#r_ig_componentes_4to_pivot{
+   height: var(--alto_pantalla_4to);
+}   
+
+#r_ig_componentes_rmu_pivot{
+   height: var(--alto_pantalla_rmu);
+}    
+
