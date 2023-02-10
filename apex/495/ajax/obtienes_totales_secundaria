@@ -1,0 +1,33 @@
+declare
+  trama varchar2(32000);
+begin  
+  begin
+   select '</colgroup>'||
+       '<tr role="row" class="a-GV-row is-aggregate a-GV-aggregate--SUM is-grandTotal">'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tC is-readonly"></td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tS is-readonly"></td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tS is-readonly"></td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tC is-readonly" style="font-weight: 700;">Totales:</td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tE alinea_derecha  is-readonly" style="font-weight: 700;">'||ltrim(rtrim(to_char(nvl(comp_11,0),'999G999G990D09')))||'</td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tE alinea_derecha  is-readonly" style="font-weight: 700;">'||ltrim(rtrim(to_char(nvl(comp_14,0),'999G999G990D09')))||'</td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tE alinea_derecha  is-readonly" style="font-weight: 700;">'||ltrim(rtrim(to_char(nvl(comp_24,0),'999G999G990D09')))||'</td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tE alinea_derecha  is-readonly" style="font-weight: 700;">'||ltrim(rtrim(to_char(nvl(comp_28,0),'999G999G990D09')))||'</td>'||
+       '<td role="gridcell" tabindex="-1" class="a-GV-cell u-tE alinea_derecha  is-readonly" style="font-weight: 700;">'||ltrim(rtrim(to_char(nvl(comp_30,0),'999G999G990D09')))||'</td>'||
+       '</tr></table>'
+         into trama
+          from
+      (select noem_total,noem_posicion
+       from rrhh_nomina_empleado@emcoepnew_link a,rrhh_empleado@emcoepnew_link b
+       where id_geno = apex_application.g_x01
+        and a.id_emp = b.id_emp)
+         pivot
+       (sum(round(noem_total,2))
+         for noem_posicion in(11 comp_11,14 comp_14,24 comp_24,28 comp_28,30 comp_30) );
+   exception
+     when others then
+         trama := null;
+   end;      
+   
+        
+   htp.p(trama);
+end;
